@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Iinclude
+CFLAGS = -Iinclude -std=c99
 
 SRC = src/main.c src/student.c src/utils.c
 OBJ = $(SRC:.c=.o)
