@@ -1,6 +1,6 @@
 .idea/
 student_management_system
-
+*.csv
 
 # Prerequisites
 *.d

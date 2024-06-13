@@ -79,13 +79,22 @@ int main() {
                 int id;
                 char name[NAME_LENGTH];
                 char gender;
-                printf("请输入学号: ");
+                char college[COLLEGE_LENGTH];
+                char dormitory[DORMITORY_LENGTH];
+                int age;
+                printf("请输入学号(例如202401): ");
                 scanf("%d", &id);
                 printf("请输入姓名: ");
                 scanf("%s", name);
                 printf("请输入性别 (M/F): ");
                 scanf(" %c", &gender);
-                addStudent(students, &count, id, name, gender);
+                printf("请输入学院: ");
+                scanf("%s", college);
+                printf("请输入宿舍号: ");
+                scanf("%s", dormitory);
+                printf("请输入年龄: ");
+                scanf("%d", &age);
+                addStudent(students, &count, id, name, gender, college, dormitory, age);
                 saveStudents(students, count, DATA_FILE);
                 break;
             }
@@ -107,13 +116,22 @@ int main() {
                 int id;
                 char name[NAME_LENGTH];
                 char gender;
-                printf("请输入要修改的学号: ");
+                char college[COLLEGE_LENGTH];
+                char dormitory[DORMITORY_LENGTH];
+                int age;
+                printf("请输入要修改的学号(例如202401): ");
                 scanf("%d", &id);
                 printf("请输入新姓名: ");
                 scanf("%s", name);
                 printf("请输入新性别 (M/F): ");
                 scanf(" %c", &gender);
-                if (modifyStudent(students, count, id, name, gender)) {
+                printf("请输入新学院: ");
+                scanf("%s", college);
+                printf("请输入新宿舍号: ");
+                scanf("%s", dormitory);
+                printf("请输入新年龄: ");
+                scanf("%d", &age);
+                if (modifyStudent(students, count, id, name, gender, college, dormitory, age)) {
                     printf("学生信息修改成功。\n");
                     saveStudents(students, count, DATA_FILE);
                 } else {
